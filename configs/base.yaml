@@ -1,0 +1,61 @@
+# Shared defaults. Experiment configs inherit via `extends: [base.yaml, datasets/<name>.yaml]`.
+# Every experimental knob lives here so runs are fully driven by YAML.
+
+seeds: [0, 1, 2, 3, 4]
+device: auto                 # auto | cpu | cuda
+
+dataset:
+  name: cora
+  root: artifacts/datasets
+  planetoid_split: public    # public | full | geom-gcn  (Planetoid only)
+  split_idx: 0               # which split column (heterophilous datasets)
+  to_undirected: null        # null -> per-dataset default
+
+features:
+  variant: raw               # raw | fca_feat | fca_group | fca_only | fca_pattern | svd_control | fca_aug_graph
+  seed: 0                    # feature-construction seed (fixed across model seeds)
+  save_artifacts: true
+  fca:
+    binarize_mode: binary_nonzero    # binary_nonzero | quantile_binarization | interval_scaling | optional_smoothed_features
+    binarize_params: {}              # e.g. {quantiles: [0.5, 0.8]} or {n_bins: 4}
+    min_support: 0.01                # attribute support window (fraction of N)
+    max_support: 0.5
+    max_attributes: 512              # cap context width before mining
+    attr_rank: support               # support | balanced
+    strategy: both                   # attribute | object | both
+    object_sample: 2000              # objects sampled for object-concepts
+    backend: fallback                # fallback | caspailleur
+    concept_min_support: 0.01        # concept support window
+    concept_max_support: 0.6
+    k_concepts: 128                  # number of selected concepts (K)
+    scorer: support                  # support | area | stability | target_entropy | lift
+    scorer_params: {}
+    membership: hard                 # hard | soft
+    pattern_params: {}               # FCA_PATTERN: interval pattern-structure options
+    num_groups: 32                   # FCA_GROUP: number of concept groups
+    group_agg: max                   # max | mean
+  svd:
+    n_components: null               # svd_control width; null -> match fca.k_concepts
+
+model:
+  name: graphsage            # logreg | mlp | graphsage | gcn
+  hidden_channels: 128
+  num_layers: 2
+  dropout: 0.5
+  aggr: mean                 # mean | max | lstm  (GraphSAGE)
+  project: false             # project neighbours before aggregation (pool/projected-max)
+  norm: false                # false | batch | layer
+  residual: false
+  jk: false                  # false | cat | max | lstm
+
+train:
+  lr: 0.005
+  weight_decay: 0.0005
+  epochs: 300
+  patience: 50
+  monitor: accuracy          # accuracy | macro_f1 (validation metric for early stopping)
+  deterministic: true
+  full_batch: true
+
+eval:
+  subgroup: true             # compute low-degree subgroup metrics

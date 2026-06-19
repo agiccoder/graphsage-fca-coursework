@@ -1,0 +1,80 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.ipynb_checkpoints/
+.venv/
+venv/
+.pytest_cache/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+
+# Local assistant / draft artifacts
+.claude/
+_pdf_dump.txt
+claude_code_*.md
+deep-research-report*.md
+Оформление_курсовых_работ_по_ГОСТ_рекомендации.docx
+
+# Heavy/generated experiment artifacts
+artifacts/datasets/
+artifacts/features/
+artifacts/runs/
+*.pt
+
+# Keep small concept metadata/artifacts tracked unless explicitly removed
+!artifacts/concepts/*.csv
+!artifacts/concepts/*.json
+
+# Scratch outputs
+results/_scratch/
+results/_archive_v1/
+results/duplicate_runs*.csv
+results/*.backup_*.csv
+results/main_results.csv
+
+# Internal reports / planning notes
+plans/
+reports/coursework_gost_and_weakness_audit.md
+reports/experiment_summary.md
+reports/experimental_findings.md
+reports/final_claims_for_text.md
+reports/final_experiment_status.md
+reports/final_text_page_audit.md
+reports/methodology_for_text.md
+reports/scaling_diagnostics_review.md
+reports/scaling_extension_summary.md
+reports/scaling_phase2b_decision.md
+reports/scaling_phase2b_summary.md
+reports/scaling_phase3_summary.md
+
+# Legacy / unused figures
+figures/ablation_k_concepts*.png
+figures/concept_intent_size_distribution.png
+figures/concept_scorer_ablation.png
+figures/degree_bucket_accuracy.png
+figures/degree_bucket_delta_vs_raw.png
+figures/lattice_toy.png
+figures/membership_ablation_accuracy.png
+
+# LaTeX build artifacts
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.lof
+*.log
+*.lot
+*.out
+*.run.xml
+*.synctex.gz
+*.toc
+
+# Local secrets
+.env
+.env.*

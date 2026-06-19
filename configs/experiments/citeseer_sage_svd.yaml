@@ -1,0 +1,10 @@
+extends: [base.yaml, datasets/citeseer.yaml]
+experiment: citeseer_sage_svd
+features:
+  variant: svd_control
+  fca:
+    k_concepts: 128
+model:
+  name: graphsage
+  hidden_channels: 128
+  num_layers: 2

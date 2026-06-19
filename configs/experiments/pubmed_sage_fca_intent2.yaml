@@ -1,0 +1,18 @@
+# PubMed (H6 / Task D): keep only multi-attribute concepts (intent_size >= 2).
+# PubMed has dense TF-IDF features; this checks whether multi-attribute concepts
+# (attribute co-occurrence structure) help where the single-attribute FCA layer
+# underperforms raw GraphSAGE.
+extends: [base.yaml, datasets/pubmed.yaml]
+experiment: pubmed_sage_fca_intent2
+features:
+  variant: fca_feat
+  fca:
+    k_concepts: 128
+    scorer: support
+    membership: hard
+    min_intent_size: 2
+model:
+  name: graphsage
+  hidden_channels: 128
+  num_layers: 2
+  aggr: mean

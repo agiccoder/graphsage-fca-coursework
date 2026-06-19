@@ -1,0 +1,15 @@
+# Roman-empire (HeterophilousGraphDataset). Heterophilous; ~22.7k nodes,
+# 300-dim continuous word-embedding features, 18 classes.
+# Continuous features -> quantile binarization for the formal context.
+dataset:
+  name: roman_empire
+  split_idx: 0
+  to_undirected: true
+features:
+  fca:
+    binarize_mode: quantile_binarization
+    binarize_params: {quantiles: [0.5, 0.8]}
+    min_support: 0.02
+    max_support: 0.6
+    max_attributes: 300
+    object_sample: 3000

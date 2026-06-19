@@ -1,0 +1,4 @@
+dataset,num_concepts,mean_intent_size,median_intent_size,max_intent_size,n_single_attr,n_multi_attr,frac_multi_attr,mean_extent_size,node_coverage
+citeseer,128,1.0,1.0,1,128,0,0.0,135.6,0.9895
+cora,128,1.039,1.0,2,123,5,0.039,99.5,0.9682
+pubmed,256,1.0,1.0,1,256,0,0.0,2807.0,1.0

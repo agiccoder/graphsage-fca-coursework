@@ -1,0 +1,6 @@
+# Concept-count ablation: feeds figures/ablation_k_concepts.png.
+# Apply to an fca_feat experiment, e.g.:
+#   python -m src.train.grid --config configs/experiments/cora_sage_fca.yaml \
+#                            --grid configs/grids/k_concepts.yaml
+grid:
+  features.fca.k_concepts: [32, 64, 128, 256]

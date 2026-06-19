@@ -1,0 +1,10 @@
+# CiteSeer (Planetoid). 3327 nodes, 3703 bag-of-words features, 6 classes.
+dataset:
+  name: citeseer
+  planetoid_split: public
+features:
+  fca:
+    binarize_mode: binary_nonzero
+    min_support: 0.01
+    max_support: 0.5
+    max_attributes: 512

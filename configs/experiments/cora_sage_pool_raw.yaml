@@ -1,0 +1,11 @@
+extends: [base.yaml, datasets/cora.yaml]
+experiment: cora_sage_pool_raw
+# Paper-style pool / projected-max aggregator (project + max).
+features:
+  variant: raw
+model:
+  name: graphsage
+  hidden_channels: 128
+  num_layers: 2
+  aggr: max
+  project: true

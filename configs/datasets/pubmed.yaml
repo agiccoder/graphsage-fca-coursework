@@ -1,0 +1,12 @@
+# PubMed (Planetoid). 19717 nodes, 500 TF-IDF features, 3 classes.
+# TF-IDF is non-negative and sparse, so "word present" (binary_nonzero) is natural.
+dataset:
+  name: pubmed
+  planetoid_split: public
+features:
+  fca:
+    binarize_mode: binary_nonzero
+    min_support: 0.01
+    max_support: 0.5
+    max_attributes: 500
+    object_sample: 4000

@@ -1,0 +1,10 @@
+extends: [base.yaml, datasets/ogbn_arxiv.yaml]
+experiment: ogbn_arxiv_sage_raw
+seeds: [0, 1, 2]
+features:
+  variant: raw
+model:
+  name: graphsage
+  hidden_channels: 256
+  num_layers: 3
+  norm: batch

@@ -1,0 +1,14 @@
+extends: [base.yaml, datasets/ogbn_arxiv.yaml]
+experiment: ogbn_arxiv_sage_fca
+seeds: [0, 1, 2]
+features:
+  variant: fca_feat
+  fca:
+    k_concepts: 128
+    scorer: support
+    membership: soft
+model:
+  name: graphsage
+  hidden_channels: 256
+  num_layers: 3
+  norm: batch

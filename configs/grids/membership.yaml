@@ -1,0 +1,5 @@
+# Hard vs soft concept membership (H5). Apply to an fca_feat experiment:
+#   python -m src.train.grid --config configs/experiments/pubmed_sage_fca.yaml \
+#                            --grid configs/grids/membership.yaml
+grid:
+  features.fca.membership: [hard, soft]

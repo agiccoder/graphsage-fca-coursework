@@ -1,0 +1,14 @@
+extends: [base.yaml, datasets/amazon_ratings.yaml]
+experiment: amazon_ratings_sage_fca
+features:
+  variant: fca_feat
+  fca:
+    k_concepts: 128
+    scorer: support
+    membership: soft
+model:
+  name: graphsage
+  hidden_channels: 128
+  num_layers: 3
+train:
+  monitor: macro_f1

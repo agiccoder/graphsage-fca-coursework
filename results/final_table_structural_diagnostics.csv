@@ -1,0 +1,10 @@
+dataset,scaling_mode,params,mean_intent_size,frac_multi_attr,node_coverage,mean_extent_size,median_extent_size
+cora,binary_nonzero,—,1.0391,0.0391,0.9922,180.9375,139.5
+cora,quantile_global,q=0.90,2.1797,0.875,0.918,129.4609,68.5
+cora,topk_per_node,topk=10,1.0312,0.0312,0.9874,99.0312,68.5
+citeseer,binary_nonzero,—,1.0,0.0,0.9955,280.3594,241.0
+citeseer,quantile_global,q=0.90,1.7734,0.6875,0.9883,188.5312,89.5
+citeseer,topk_per_node,topk=10,1.0,0.0,0.9859,95.6328,73.0
+pubmed,binary_nonzero,—,1.0,0.0,1.0,3921.6641,3313.5
+pubmed,quantile_global,q=0.75,2.2109,0.7422,0.9989,1784.6797,866.5
+pubmed,topk_per_node,topk=10,1.0,0.0,0.9952,715.7891,596.0

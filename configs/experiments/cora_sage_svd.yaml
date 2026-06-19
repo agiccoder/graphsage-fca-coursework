@@ -1,0 +1,11 @@
+extends: [base.yaml, datasets/cora.yaml]
+experiment: cora_sage_svd
+# Equal-dimensionality control: adds k SVD components instead of k concepts.
+features:
+  variant: svd_control
+  fca:
+    k_concepts: 128        # SVD width matches this for a fair comparison
+model:
+  name: graphsage
+  hidden_channels: 128
+  num_layers: 2

@@ -1,0 +1,6 @@
+extends: [base.yaml, datasets/cora.yaml]
+experiment: cora_logreg_raw
+features:
+  variant: raw
+model:
+  name: logreg

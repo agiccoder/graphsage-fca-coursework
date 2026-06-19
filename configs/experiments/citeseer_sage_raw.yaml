@@ -1,0 +1,8 @@
+extends: [base.yaml, datasets/citeseer.yaml]
+experiment: citeseer_sage_raw
+features:
+  variant: raw
+model:
+  name: graphsage
+  hidden_channels: 128
+  num_layers: 2

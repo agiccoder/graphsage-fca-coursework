@@ -1,0 +1,10 @@
+extends: [base.yaml, datasets/amazon_ratings.yaml]
+experiment: amazon_ratings_sage_raw
+features:
+  variant: raw
+model:
+  name: graphsage
+  hidden_channels: 128
+  num_layers: 3
+train:
+  monitor: macro_f1

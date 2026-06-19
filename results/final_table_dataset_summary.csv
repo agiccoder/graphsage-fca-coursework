@@ -1,0 +1,4 @@
+dataset,num_nodes,num_edges,num_features,num_classes,train,val,test,split
+cora,2708,10556,1433,7,140,500,1000,public
+citeseer,3327,9104,3703,6,120,500,1000,public
+pubmed,19717,88648,500,3,60,500,1000,public

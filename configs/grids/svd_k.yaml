@@ -1,0 +1,5 @@
+# Matched SVD-control dimensionality sweep (Task B). Apply to an svd_control config:
+#   python -m src.train.grid --config configs/experiments/cora_sage_svd.yaml \
+#                            --grid configs/grids/svd_k.yaml
+grid:
+  features.svd.n_components: [32, 64, 128, 256]

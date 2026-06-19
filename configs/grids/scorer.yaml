@@ -1,0 +1,4 @@
+# Concept-selection-criterion ablation (an FCA-literature research axis).
+# Supervised scorers (target_entropy, lift) use TRAIN labels only.
+grid:
+  features.fca.scorer: [support, area, stability, target_entropy, lift]

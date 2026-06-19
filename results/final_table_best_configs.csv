@@ -1,0 +1,4 @@
+dataset,best_fca_config,best_fca_acc_mean,best_fca_acc_std,raw_sage_acc,best_svd_acc,best_svd_k,interpretation
+cora,binary_nonzero default K128 target_entropy,0.8144,0.00697423830966505,0.8008000000000001,0.812,64,"Richer scaling does not help; best FCA is binary_nonzero + target_entropy (≈ ties SVD, below it)."
+citeseer,"quantile_global {""quantile"": 0.9} K256 target_entropy",0.7108,0.008518215775618749,0.6832,0.7116,64,Richer quantile_global beats both K-matched SVD and raw GraphSAGE (K=128 and 256).
+pubmed,"topk_per_node {""topk"": 10} K128 support",0.751,0.007797435475847178,0.7658,0.7658,32,Richer scaling strongly repairs binary_nonzero but stays below SVD/raw — softened negative case.

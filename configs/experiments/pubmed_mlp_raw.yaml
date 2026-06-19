@@ -1,0 +1,8 @@
+extends: [base.yaml, datasets/pubmed.yaml]
+experiment: pubmed_mlp_raw
+features:
+  variant: raw
+model:
+  name: mlp
+  hidden_channels: 128
+  num_layers: 2

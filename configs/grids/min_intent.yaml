@@ -1,0 +1,5 @@
+# Multi-attribute concept filtering (G2): all concepts vs intent_size >= 2.
+#   python -m src.train.grid --config configs/experiments/cora_sage_fca.yaml \
+#                            --grid configs/grids/min_intent.yaml
+grid:
+  features.fca.min_intent_size: [1, 2]

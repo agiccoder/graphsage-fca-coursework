@@ -1,0 +1,16 @@
+# Cora (G2): keep only multi-attribute concepts (intent_size >= 2) so the FCA
+# layer is genuinely conceptual, not single-feature selection.
+extends: [base.yaml, datasets/cora.yaml]
+experiment: cora_sage_fca_intent2
+features:
+  variant: fca_feat
+  fca:
+    k_concepts: 128
+    scorer: support
+    membership: hard
+    min_intent_size: 2
+model:
+  name: graphsage
+  hidden_channels: 128
+  num_layers: 2
+  aggr: mean

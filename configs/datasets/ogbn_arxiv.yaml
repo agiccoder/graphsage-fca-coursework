@@ -1,0 +1,17 @@
+# ogbn-arxiv (OGB). Large; 169343 nodes, 128-dim continuous embeddings,
+# 40 classes, official time split. Requires `pip install ogb`.
+# NOTE: full-batch on CPU is heavy; reduce seeds/epochs or use a GPU.
+dataset:
+  name: ogbn_arxiv
+  to_undirected: true
+features:
+  fca:
+    binarize_mode: quantile_binarization
+    binarize_params: {quantiles: [0.5, 0.8]}
+    min_support: 0.02
+    max_support: 0.6
+    max_attributes: 256
+    object_sample: 4000
+train:
+  epochs: 300
+  patience: 40

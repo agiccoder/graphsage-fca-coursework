@@ -1,0 +1,13 @@
+extends: [base.yaml, datasets/cora.yaml]
+experiment: cora_sage_fca_group
+# FCA_GROUP: concepts grouped by intent overlap, compact group features.
+features:
+  variant: fca_group
+  fca:
+    k_concepts: 128
+    num_groups: 32
+    group_agg: max
+model:
+  name: graphsage
+  hidden_channels: 128
+  num_layers: 2

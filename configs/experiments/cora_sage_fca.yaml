@@ -1,0 +1,13 @@
+extends: [base.yaml, datasets/cora.yaml]
+experiment: cora_sage_fca
+features:
+  variant: fca_feat
+  fca:
+    k_concepts: 128
+    scorer: support
+    membership: hard
+model:
+  name: graphsage
+  hidden_channels: 128
+  num_layers: 2
+  aggr: mean

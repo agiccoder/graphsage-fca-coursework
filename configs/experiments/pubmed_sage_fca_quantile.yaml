@@ -1,0 +1,21 @@
+# PubMed diagnostic: quantile conceptual scaling of dense TF-IDF features
+# ("high value" attributes) + soft membership. Tests whether the PubMed drop is
+# caused by coarse binary_nonzero discretisation rather than by FCA itself.
+extends: [base.yaml, datasets/pubmed.yaml]
+experiment: pubmed_sage_fca_quantile
+features:
+  variant: fca_feat
+  fca:
+    binarize_mode: quantile_binarization
+    binarize_params:
+      quantiles: [0.8, 0.95]
+    min_support: 0.02
+    max_support: 0.5
+    k_concepts: 128
+    scorer: support
+    membership: soft
+model:
+  name: graphsage
+  hidden_channels: 128
+  num_layers: 2
+  aggr: mean

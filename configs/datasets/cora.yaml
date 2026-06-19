@@ -1,0 +1,11 @@
+# Cora (Planetoid). 2708 nodes, 1433 bag-of-words features, 7 classes.
+# Bag-of-words -> binary_nonzero is the natural formal context.
+dataset:
+  name: cora
+  planetoid_split: public
+features:
+  fca:
+    binarize_mode: binary_nonzero
+    min_support: 0.01
+    max_support: 0.5
+    max_attributes: 512

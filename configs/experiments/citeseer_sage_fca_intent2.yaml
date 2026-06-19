@@ -1,0 +1,18 @@
+# CiteSeer (H6 / Task D): keep only multi-attribute concepts (intent_size >= 2)
+# so the FCA layer is genuinely conceptual, not single-feature selection. This is
+# the dataset where almost all selected concepts are single-attribute, so the
+# intent>=2 filter probes whether usable multi-attribute structure exists at all.
+extends: [base.yaml, datasets/citeseer.yaml]
+experiment: citeseer_sage_fca_intent2
+features:
+  variant: fca_feat
+  fca:
+    k_concepts: 128
+    scorer: support
+    membership: hard
+    min_intent_size: 2
+model:
+  name: graphsage
+  hidden_channels: 128
+  num_layers: 2
+  aggr: mean

@@ -1,0 +1,14 @@
+# Amazon-ratings (HeterophilousGraphDataset). Heterophilous; ~24.5k nodes,
+# 300-dim continuous features, 5 classes.
+dataset:
+  name: amazon_ratings
+  split_idx: 0
+  to_undirected: true
+features:
+  fca:
+    binarize_mode: quantile_binarization
+    binarize_params: {quantiles: [0.5, 0.8]}
+    min_support: 0.02
+    max_support: 0.6
+    max_attributes: 300
+    object_sample: 3000

@@ -1,0 +1,8 @@
+extends: [base.yaml, datasets/cora.yaml]
+experiment: cora_gcn_raw
+features:
+  variant: raw
+model:
+  name: gcn
+  hidden_channels: 128
+  num_layers: 2

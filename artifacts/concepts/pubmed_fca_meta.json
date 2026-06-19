@@ -1,0 +1,21 @@
+{
+  "variant": "fca_pattern",
+  "raw_dim": 500,
+  "added_dim": 256,
+  "coverage": {
+    "num_concepts": 256,
+    "node_coverage": 0.9555206167266825,
+    "avg_concepts_per_node": 12.186894557995638,
+    "sparsity": 0.9523949431328296,
+    "mean_intent_size": 2.0,
+    "median_intent_size": 2.0,
+    "n_single_attr": 0,
+    "n_multi_attr": 256,
+    "mean_extent_size": 2614.5195,
+    "pattern_num_candidates": 962,
+    "pattern_num_features": 500,
+    "pattern_n_bins": 4,
+    "pattern_intent_size": 2,
+    "pattern_source": "graph_smoothed"
+  }
+}
